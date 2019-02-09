@@ -1,0 +1,21 @@
+// stylelint-disable declaration-no-important
+
+@mixin float-left {
+  #{$ltr-selector} {
+    float: left !important;
+  }
+  #{$rtl-selector} {
+    float: right !important;
+  }
+}
+@mixin float-right {
+  #{$ltr-selector} {
+    float: right !important;
+  }
+  #{$rtl-selector} {
+    float: left !important;
+  }
+}
+@mixin float-none {
+  float: none !important;
+}

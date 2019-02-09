@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir='ltr'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap RTL Support Snippets</title>
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+</head>
+
+<body>
+    <header class="pb-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+            <div class="container mx-auto">
+                <a class="navbar-brand" href="#">Bootstrap Components Snippets</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Category
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="nav-menu">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="rtlSwitch">
+                            <label class="custom-control-label" for="rtlSwitch">RTL</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container border p-3 mx-auto my-5 rounded" id="content"></div>
+
+    <script src="/assets/jquery.min.js"></script>
+    <script src="/assets/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

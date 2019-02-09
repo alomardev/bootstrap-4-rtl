@@ -1,0 +1,88 @@
+@mixin caret-down {
+  border-top: $caret-width solid;
+  border-right: $caret-width solid transparent;
+  border-bottom: 0;
+  border-left: $caret-width solid transparent;
+}
+
+@mixin caret-up {
+  border-top: 0;
+  border-right: $caret-width solid transparent;
+  border-bottom: $caret-width solid;
+  border-left: $caret-width solid transparent;
+}
+
+@mixin caret-right {
+  border-top: $caret-width solid transparent;
+  border-bottom: $caret-width solid transparent;
+  #{$ltr-selector} {
+    border-right: 0;
+    border-left: $caret-width solid;
+  }
+  #{$rtl-selector} {
+    border-left: 0;
+    border-right: $caret-width solid;
+  }
+}
+
+@mixin caret-left {
+  border-top: $caret-width solid transparent;
+  border-bottom: $caret-width solid transparent;
+  #{$ltr-selector} {
+    border-right: $caret-width solid;
+  }
+  #{$rtl-selector} {
+    border-left: $caret-width solid;
+  }
+}
+
+@mixin caret($direction: down) {
+  @if $enable-caret {
+    &::after {
+      display: inline-block;
+      #{$ltr-selector} {
+        margin-left: $caret-width * .85;
+      }
+      #{$rtl-selector} {
+        margin-right: $caret-width * .85;
+      }
+      vertical-align: $caret-width * .85;
+      content: "";
+      @if $direction == down {
+        @include caret-down;
+      } @else if $direction == up {
+        @include caret-up;
+      } @else if $direction == right {
+        @include caret-right;
+      }
+    }
+
+    @if $direction == left {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        display: inline-block;
+        #{$ltr-selector} {
+          margin-right: $caret-width * .85;
+        }
+        #{$rtl-selector} {
+          margin-left: $caret-width * .85;
+        }
+        vertical-align: $caret-width * .85;
+        content: "";
+        @include caret-left;
+      }
+    }
+
+    &:empty::after {
+      #{$ltr-selector} {
+        margin-left: 0;
+      }
+      #{$rtl-selector} {
+        margin-right: 0;
+      }
+    }
+  }
+}
