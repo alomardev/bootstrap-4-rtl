@@ -255,12 +255,12 @@
   padding-top: $custom-select-padding-y;
   padding-bottom: $custom-select-padding-y;
   #{$ltr-selector} {
-    padding-left: ($custom-select-padding-x + $custom-select-indicator-padding);
-    padding-right: $custom-select-padding-x;
-  }
-  #{$rtl-selector} {
     padding-right: ($custom-select-padding-x + $custom-select-indicator-padding);
     padding-left: $custom-select-padding-x;
+  }
+  #{$rtl-selector} {
+    padding-left: ($custom-select-padding-x + $custom-select-indicator-padding);
+    padding-right: $custom-select-padding-x;
   }
   font-weight: $custom-select-font-weight;
   line-height: $custom-select-line-height;
